@@ -8,15 +8,18 @@
 </head>
 
 <body style="height: 100%;">
-    <div style="height: 40%;" class="weather-bg">
+    <div style="height: 40%;" class="weather-bg outer container">
+        <div class="text-center inner">
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6">
+                    <span id="city-name" class="h1"></span>
+                </div>
+            </div>
+        </div>
     </div>
     <div style="height: 60%;" class="container weather-panel">
     </div>
     <div id="weather-template" hidden>
-        <div class="row">
-            <div class="pull-left text-muted h4"><i class="fa fa-clock-o" aria-hidden="true"></i>currenttime</div>
-            <div class="pull-right text-muted h4">currentlocation</div>
-        </div>
         <div class="row">
             <div class="col-xs-offset-3 col-xs-6 col-sm-offset-5 col-sm-2 img-responsive"><img src="img/weathermain.svg" width="100%"></div>
         </div>

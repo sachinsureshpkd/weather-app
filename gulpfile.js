@@ -22,7 +22,7 @@ gulp.task('uglify', function() {
         .pipe(gulp.dest('dist/js/'));
 });
 gulp.task('watch', function() {
-    gulp.watch('css/*.css', ['processcss']);
+    gulp.watch('css/*.less', ['processcss']);
     gulp.watch('js/*.js', ['uglify']);
 });
 gulp.task('default', ['watch', 'processcss', 'uglify']);

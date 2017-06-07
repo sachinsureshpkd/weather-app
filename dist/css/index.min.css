@@ -1,1 +1,1 @@
-body .heavy-font{font-weight:bolder;font-size:60px;margin-top:0;margin-bottom:20px}body .weather-main{font-size:25px}
+body .outer{display:table;width:100%}body .inner{display:table-cell;vertical-align:middle}body #city-name{color:#fff;font-weight:bolder}body .heavy-font{font-weight:bolder;font-size:60px;margin-top:0;margin-bottom:20px}body .weather-main{font-size:25px}body .weather-panel{padding:20px}

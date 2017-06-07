@@ -1,8 +1,22 @@
 $(document).ready(function() {
-    loadWeather();
+    var citylist = [{
+        cityName: "Bangalore",
+        cityCode: 1277333
+    }, {
+        cityName: "Cochin",
+        cityCode: 1273874
+    }, {
+        cityName: "New Delhi",
+        cityCode: 1273293
+    }, {
+        cityName: "Palakkad",
+        cityCode: 1260728
+    }];
+    var cityId;
+    loadCities(0);
+    loadWeather(cityId);
 
-    function loadWeather() {
-        var cityId = 6356042;
+    function loadWeather(cityId) {
         $.getJSON("http://api.openweathermap.org/data/2.5/weather?id=" + cityId + "&APPID=de3bc277144ce6d8ff3a04de56e1922c&units=metric").then(
             function(data) {
                 var output = $('#weather-template').html();
@@ -10,7 +24,7 @@ $(document).ready(function() {
                 var current_temp = data.main.temp;
                 var temp_max = data.main.temp_max;
                 var temp_min = data.main.temp_min;
-                output = output.replace('currenttime', current_time.getHours() + ":" + current_time.getMinutes()).replace('currentlocation', data.name).replace('mainweather', data.weather[0].main).replace('weathermain', data.weather[0].main).replace('currenttemp', current_temp).replace('maxtemp', temp_max).replace('mintemp', temp_min);
+                output = output.replace('mainweather', data.weather[0].main).replace('weathermain', data.weather[0].main).replace('currenttemp', current_temp).replace('maxtemp', temp_max).replace('mintemp', temp_min);
                 $('.weather-panel').html(output);
                 if (data.weather[0].main == 'Clear') {
                     $('.weather-bg').css('background-color', '#5EBCFF');
@@ -32,5 +46,10 @@ $(document).ready(function() {
             function() {
                 console.log('error fetching data');
             });
+    }
+
+    function loadCities(cityIndex){
+        $('#city-name').html(citylist[cityIndex].cityName);
+        cityId = citylist[cityIndex].cityCode;
     }
 });
