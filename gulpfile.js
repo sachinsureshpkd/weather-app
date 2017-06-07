@@ -1,10 +1,12 @@
 var gulp = require('gulp');
 var cleancss = require('gulp-clean-css');
+var less = require('gulp-less');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 
-gulp.task('cleancss', function() {
-    return gulp.src('css/*.css')
+gulp.task('processcss', function() {
+    return gulp.src('css/*.less')
+        .pipe(less())
         .pipe(cleancss())
         .pipe(rename({
             suffix: '.min'
@@ -20,7 +22,7 @@ gulp.task('uglify', function() {
         .pipe(gulp.dest('dist/js/'));
 });
 gulp.task('watch', function() {
-    gulp.watch('css/*.css', ['cleancss']);
+    gulp.watch('css/*.css', ['processcss']);
     gulp.watch('js/*.js', ['uglify']);
 });
-gulp.task('default', ['watch', 'cleancss', 'uglify']);
+gulp.task('default', ['watch', 'processcss', 'uglify']);
