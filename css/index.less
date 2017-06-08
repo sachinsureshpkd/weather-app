@@ -1,3 +1,7 @@
+.city-name-style{
+    color: white;
+    font-weight: bolder;
+}
 body {
     .outer {
         display: table;
@@ -5,9 +9,8 @@ body {
         .inner {
             display: table-cell;
             vertical-align: middle;
-            #city-name {
-                color: white;
-                font-weight: bolder;
+            #city-name{
+                .city-name-style;
             }
         }
     }
@@ -15,6 +18,13 @@ body {
         ul {
             width: 100%;
             text-align: center;
+            background-color: #444;
+            li{
+               .city-name-style; 
+                &:hover{
+                    cursor: pointer;
+                }
+            }
         }
     }
     .heavy-font {

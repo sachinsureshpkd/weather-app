@@ -16,6 +16,11 @@ $(document).ready(function() {
     loadCities(0);
     loadWeather(cityId);
 
+    $(document).on('click', '.dropdown .dropdown-menu li', function(){
+        loadCities($(this).data('index'));
+        loadWeather(cityId);
+    });
+
     function loadWeather(cityId) {
         $.getJSON("http://api.openweathermap.org/data/2.5/weather?id=" + cityId + "&APPID=de3bc277144ce6d8ff3a04de56e1922c&units=metric").then(
             function(data) {
@@ -54,7 +59,7 @@ $(document).ready(function() {
         cityId = citylist[cityIndex].cityCode;
         for (var i = 0; i < citylist.length; i++) {
             if (i != cityIndex) {
-                $('.dropdown .dropdown-menu').append('<li><a href="#">' + citylist[i].cityName + '</a></li>')
+                $('.dropdown .dropdown-menu').append('<li class="h1" data-index=' + i + '>' + citylist[i].cityName + '</a></li>')
             }
         }
     }
