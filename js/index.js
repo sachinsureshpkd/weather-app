@@ -49,7 +49,13 @@ $(document).ready(function() {
     }
 
     function loadCities(cityIndex){
-        $('#city-name').html(citylist[cityIndex].cityName);
+        $('.dropdown .dropdown-menu').html('');
+        $('#city-name').html('' + citylist[cityIndex].cityName + '<span class="caret"></span>');
         cityId = citylist[cityIndex].cityCode;
+        for (var i = 0; i < citylist.length; i++) {
+            if (i != cityIndex) {
+                $('.dropdown .dropdown-menu').append('<li><a href="#">' + citylist[i].cityName + '</a></li>')
+            }
+        }
     }
 });
