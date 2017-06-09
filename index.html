@@ -14,11 +14,8 @@
                 <div class="col-md-offset-3 col-md-6">
                     <div class="dropdown">
                         <div class="dropdown-toggle h1" id="city-name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            
-                            
                         </div>
                         <ul class="dropdown-menu" aria-labelledby="city-name">
-                            
                         </ul>
                     </div>
                 </div>
@@ -29,17 +26,44 @@
     </div>
     <div id="weather-template" hidden>
         <div class="row">
-            <div class="col-xs-offset-3 col-xs-6 col-sm-offset-5 col-sm-2 img-responsive"><img src="img/weathermain.svg" width="100%"></div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 text-center weather-main">mainweather</div>
-        </div>
-        <div class="row">
-            <h1 class="col-xs-12 text-center heavy-font">currenttemp&deg;</h1>
-        </div>
-        <div class="row">
-            <div class="col-xs-6 text-right"><b>H maxtemp</b></div>
-            <div class="col-xs-6 text-left"><b>L mintemp</b></div>
+            <div class="col-xs-12 col-md-6">
+                <div class="row">
+                    <div class="col-xs-offset-3 col-xs-6 col-sm-offset-5 col-sm-2 img-responsive"><img src="img/weathermain.svg" width="100%"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 text-center weather-main">mainweather</div>
+                </div>
+                <div class="row">
+                    <h1 class="col-xs-12 text-center heavy-font">currenttemp&deg;</h1>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 text-right"><b>H maxtemp</b></div>
+                    <div class="col-xs-6 text-left"><b>L mintemp</b></div>
+                </div>
+            </div>
+            <div class="hidden-xs hidden-sm col-md-6">
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="weather-main"><b>weatherdescription</b></span>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="weather-main"><b>Visibility : weathervisibility</b></span>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-12"><span class="h4"><b>Wind speed : windspeed</b></span></div>
+                </div><br>
+                <div class="row">
+                    <div class="col-md-12"><span class="h4"><b>Wind direction : winddeg</b></span></div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
