@@ -9,9 +9,9 @@
 </head>
 
 <body style="height: 100%;">
-<div class="preloader" style="position: fixed;top: 50%;left: 50%">
-    <img src="img/Preloader_2.gif">
-</div>
+    <div class="preloader" style="position: fixed;top: 50%;left: 50%">
+        <img src="img/Preloader_2.gif">
+    </div>
     <div style="height: 40%;" class="weather-bg outer container">
         <div class="text-center inner">
             <div class="row">
@@ -28,7 +28,7 @@
     </div>
     <div style="height: 60%;" class="container weather-panel">
     </div>
-    <div id="weather-template" hidden>
+    <!-- <div id="weather-template" hidden>
         <div class="row">
             <div class="col-xs-12 col-md-6">
                 <div class="row">
@@ -69,11 +69,54 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/ab54800655.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
     <script type="text/javascript" src="dist/js/index.min.js"></script>
+    <script type="text/x-handlebars-template" id="weather-template">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div class="row">
+                    <div class="col-xs-offset-3 col-xs-6 col-sm-offset-5 col-sm-2 img-responsive"><img src="img/{{weatherMain}}.svg" width="100%"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 text-center weather-main">{{weatherMain}}</div>
+                </div>
+                <div class="row">
+                    <h1 class="col-xs-12 text-center heavy-font">{{weatherCurrentTemp}}&deg;</h1>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 text-right"><b>H {{weatherMaxTemp}}</b></div>
+                    <div class="col-xs-6 text-left"><b>L {{weatherMinTemp}}</b></div>
+                </div>
+            </div>
+            <div class="hidden-xs hidden-sm col-md-6">
+                <br>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="weather-main"><b>{{weatherDescription}}</b></span>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class="weather-main"><b>Visibility : {{weatherVisibility}}</b></span>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-md-12"><span class="h4"><b>Wind speed : {{weatherWindSpeed}}</b></span></div>
+                </div><br>
+                <div class="row">
+                    <div class="col-md-12"><span class="h4"><b>Wind direction : {{weatherWinDirection}}</b></span></div>
+                </div>
+            </div>
+        </div>
+    </script>
 </body>
 
 </html>
